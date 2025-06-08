@@ -115,4 +115,4 @@ Public API Link: https://lostguy14-blurdetection.hf.space/docs
 
 ## 🌐 Frontend (Next.js + TailwindCSS + TypeScript + Vercel)
 
-Link to the website: 
+Link to the website: https://blurryvisionai.vercel.app/
