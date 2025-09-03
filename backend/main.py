@@ -4,10 +4,11 @@ from PIL import Image
 import io
 import base64
 import requests
+import os 
 
 app = FastAPI()
 
-ROBOFLOW_API_KEY = ""
+ROBOFLOW_API_KEY = os.getenv("ROBOFLOW_API_KEY")
 ROBOFLOW_MODEL_ENDPOINT = f"https://classify.roboflow.com/blurdetection-d9o8a/1?api_key={ROBOFLOW_API_KEY}"
 
 @app.post("/predict/")
@@ -41,4 +42,5 @@ async def predict(file: UploadFile = File(...)):
 
     except Exception as e:
         return JSONResponse(status_code=500, content={"error": str(e)})
+
 
