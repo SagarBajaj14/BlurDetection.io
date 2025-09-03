@@ -7,7 +7,7 @@ import requests
 
 app = FastAPI()
 
-ROBOFLOW_API_KEY = "NzM0W40H4xSe0uAM56QN"
+ROBOFLOW_API_KEY = ""
 ROBOFLOW_MODEL_ENDPOINT = f"https://classify.roboflow.com/blurdetection-d9o8a/1?api_key={ROBOFLOW_API_KEY}"
 
 @app.post("/predict/")
@@ -41,3 +41,4 @@ async def predict(file: UploadFile = File(...)):
 
     except Exception as e:
         return JSONResponse(status_code=500, content={"error": str(e)})
+
